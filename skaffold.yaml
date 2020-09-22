@@ -1,0 +1,13 @@
+apiVersion: skaffold/v2beta7
+kind: Config
+metadata:
+  name: demo
+build:
+  artifacts:
+  - image: myimage
+    jib:
+      project: com.example:demo
+deploy:
+  kubectl:
+    manifests:
+    - deployment.yaml
